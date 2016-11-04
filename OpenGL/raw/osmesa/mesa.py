@@ -81,12 +81,21 @@ def OSMesaGetColorBuffer(c):
     else:
         return 0, 0, 0, None
 
+@_f
+@_p.types(None, GLboolean)
+def OSMesaColorClamp( ctx, enable ): pass
+
+@_f
+@_p.types(None, OSMesaContext, ctypes.c_char_p, ctypes.c_uint)
+def OSMesaPostprocess( ctx, filter, enable_value ): pass
+
 
 __all__ = [
     'OSMesaCreateContext',
     'OSMesaCreateContextExt', 'OSMesaMakeCurrent', 'OSMesaGetIntegerv',
     'OSMesaGetCurrentContext', 'OSMesaDestroyContext', 'OSMesaPixelStore',
-    'OSMesaGetDepthBuffer', 'OSMesaGetColorBuffer',
+    'OSMesaGetDepthBuffer', 'OSMesaGetColorBuffer', 'OSMesaColorClamp',
+    'OSMesaPostprocess',
     'OSMESA_COLOR_INDEX', 'OSMESA_RGBA', 'OSMESA_BGRA', 'OSMESA_ARGB',
     'OSMESA_RGB', 'OSMESA_BGR', 'OSMESA_BGR', 'OSMESA_ROW_LENGTH',
     'OSMESA_Y_UP', 'OSMESA_WIDTH', 'OSMESA_HEIGHT', 'OSMESA_FORMAT',
