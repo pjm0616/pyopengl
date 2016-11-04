@@ -73,7 +73,7 @@ def OSMesaGetColorBuffer(c):
     width, height, format = GLint(), GLint(), GLint()
     buffer = ctypes.c_void_p()
 
-    if GL.OSMesaGetColorBuffer(c, ctypes.byref(width),
+    if _p.PLATFORM.GL.OSMesaGetColorBuffer(c, ctypes.byref(width),
                                     ctypes.byref(height),
                                     ctypes.byref(format),
                                     ctypes.byref(buffer)):
